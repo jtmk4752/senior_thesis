@@ -8,3 +8,5 @@ My code is based on:<br />
 &emsp;&emsp;https://wisteriahill.sakura.ne.jp/CMS/WordPress/2021/04/06/jetson-nano-dlib-face-recognition/<br />
 &emsp;&emsp;&emsp;-Image to Json converter<br />
 &emsp;&emsp;&emsp;-Face recognition function<br />
+&emsp;&emsp;https://stackoverflow.com/questions/64196315/json-dump-into-specific-folder
+&emsp;&emsp;&emsp;-"img_data" function to convert_module.py

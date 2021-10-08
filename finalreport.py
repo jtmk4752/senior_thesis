@@ -49,7 +49,6 @@ def root():
 def Error():
     print("ファイルエラー")
 
-
 @bottle.post("/submit")
 @bottle.view("submit")
 def submit():
