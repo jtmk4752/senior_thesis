@@ -1,6 +1,6 @@
 # senior_thesis
 For my senior thesis. 
-My code is based on:
+My code is based on:<br />
 	My university class:
 	Programming Ⅱ (Python) Instructor KATO Kimikazu
 		-web site
