@@ -89,8 +89,15 @@ def list():
 
 @bottle.route("/delete/<message>")
 def delete(message):
+
     with env.begin(write=True) as txn:
+        data_delete = txn.get(message.encode("utf8"))
+        data_delete = json.loads(data_delete.decode("utf8"))
+        data_delete_name = data_delete["Name"]
+        file_name = "./img_data" + "/" + data_delete_name +".json"
+        os.remove(file_name)
         txn.delete(message.encode("utf8"))
+    
     bottle.redirect("/list")
 
 
