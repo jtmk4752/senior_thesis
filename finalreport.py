@@ -19,7 +19,8 @@ def get_id(txn):
     except StopIteration:
         last_id = 0
     id = last_id+1
-    return "{:08d}".format(id)
+    return format(id)
+
 
 
 
