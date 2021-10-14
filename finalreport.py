@@ -22,9 +22,6 @@ def get_id(txn):
     return format(id)
 
 
-
-
-
 @bottle.route("/")
 @bottle.view("list")
 def list():
@@ -65,8 +62,7 @@ def submit():
             image = face_recognition.load_image_file(files.file)
         except:
             bottle.redirect("/error")
-        e_name,_ = os.path.splitext(files.filename)
-        img_converter(e_name,image)
+        img_converter(Name,image)
         with env.begin(write=True) as txn:
             id = get_id(txn)
             txn.put(id.encode("utf8"), json.dumps(data).encode("utf8"))
