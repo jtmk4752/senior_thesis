@@ -8,7 +8,6 @@
     <ul>
       以下の内容で登録しました
       <li>名前:{{Name}}</li>
-      <li>著者:{{author}}</li>
       <li>出版社:{{publisher}}</li>
     </ul>
     <p><a href="/entry">新規登録</a></p>

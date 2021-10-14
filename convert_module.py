@@ -26,6 +26,6 @@ def img_converter(e_name,i_data):
             print(e)
             raise
     file_name=e_name + ".json"
-    imageTojson_data = get_EncodingData(e_name,i_data)
+    image_To_json_data = get_EncodingData(e_name,i_data)
     with open(os.path.join(folder_name, file_name),"w") as fp:
-        json.dump(imageTojson_data,fp)
+        json.dump(image_To_json_data,fp)

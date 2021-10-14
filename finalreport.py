@@ -52,12 +52,11 @@ def Error():
 def submit():
 
     Name = bottle.request.params.Name
-    author = bottle.request.params.author
     publisher = bottle.request.params.publisher
     files = bottle.request.files.get('file')
 
     if files:
-        data = {"Name": Name, "author": author, "publisher": publisher}
+        data = {"Name": Name, "publisher": publisher}
         try:
             image = face_recognition.load_image_file(files.file)
         except:
@@ -93,8 +92,6 @@ def delete(message):
     with env.begin(write=True) as txn:
         txn.delete(message.encode("utf8"))
     bottle.redirect("/list")
-
-
 
 
 bottle.run()
