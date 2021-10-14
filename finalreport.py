@@ -56,11 +56,10 @@ def submit():
     Name = bottle.request.params.Name
     author = bottle.request.params.author
     publisher = bottle.request.params.publisher
-    lend = bottle.request.params.lend
     files = bottle.request.files.get('file')
 
     if files:
-        data = {"Name": Name, "author": author, "publisher": publisher, "lend": 0}
+        data = {"Name": Name, "author": author, "publisher": publisher}
         try:
             image = face_recognition.load_image_file(files.file)
         except:
@@ -99,34 +98,6 @@ def delete(message):
     bottle.redirect("/list")
 
 
-@bottle.route("/lending/<message>")
-def lending(message):
-    with env.begin(write=True) as txn:
-        data_lending = txn.get(message.encode("utf8"))
-        data_lending = json.loads(data_lending.decode("utf8"))
-        data_lending["lend"] = 1
-        txn.put(message.encode("utf8"), json.dumps(data_lending).encode("utf8"))
-    bottle.redirect("/limit/"+message)
-
-
-@bottle.route("/limit/<message>")
-@bottle.view("limit")
-def Limit(message):
-    now_date = datetime.datetime.now()
-    limit_date = now_date+datetime.timedelta(days=30)
-    limit_date = limit_date.strftime("%Y/%m/%d")
-    print("貸し出し期限:", limit_date)
-    return {"limit_date": limit_date}
-
-
-@bottle.route("/return/<message>")
-def returning(message):
-    with env.begin(write=True) as txn:
-        data_lending = txn.get(message.encode("utf8"))
-        data_lending = json.loads(data_lending.decode("utf8"))
-        data_lending["lend"] = 0
-        txn.put(message.encode("utf8"), json.dumps(data_lending).encode("utf8"))
-    bottle.redirect("/list")
 
 
 bottle.run()

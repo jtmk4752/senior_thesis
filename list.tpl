@@ -10,23 +10,14 @@
     <table border="solid">
       <thead>
         <td>名前(ローマ字)</td><td>著者</td><td>出版社</td><!--<td>購入日</td>-->
-        <td>貸出/返却</td><td>削除</td>
+        <td>削除</td>
       </thead>
       <tbody>
         %for (k,d) in zip(KEY,data):
         <tr>
-        % if d["lend"] == 0:
           <td>{{d["Name"]}}</td>
-        % else:
-          <td><font color="red">{{d["Name"]}}</font></td>
-        % end
         <td>{{d["author"]}}</td>
         <td>{{d["publisher"]}}</td>
-        % if d["lend"] == 0:
-          <td><a href="/lending/{{k}}">貸出</a></td>
-        % else:
-          <td><a href="/return/{{k}}">返却</a></td>
-        % end
         <td><a href="/delete/{{k}}">削除</a></td>
         </tr>
         %end

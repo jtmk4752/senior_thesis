@@ -11,7 +11,7 @@
       <li>著者:{{author}}</li>
       <li>出版社:{{publisher}}</li>
     </ul>
-    <p><a href="/">新規登録</a></p>
-    <p><a href="/list">本一覧</a></p>
+    <p><a href="/entry">新規登録</a></p>
+    <p><a href="/">一覧</a></p>
   </body>
 </html>
