@@ -52,11 +52,11 @@ def Error():
 def submit():
 
     Name = bottle.request.params.Name
-    publisher = bottle.request.params.publisher
+    IP = bottle.request.params.IP
     files = bottle.request.files.get('file')
 
     if files:
-        data = {"Name": Name, "publisher": publisher}
+        data = {"Name": Name, "IP": IP}
         try:
             image = face_recognition.load_image_file(files.file)
         except:
@@ -69,24 +69,6 @@ def submit():
     else:
         bottle.redirect("/error")
 
-
-@bottle.route("/list")
-@bottle.view("list")
-def list():
-    data = []
-    KEY = []
-    with env.begin() as txn:
-        cur = txn.cursor()
-        for key, value in cur:
-            key = key.decode("utf8")
-            d = json.loads(value.decode("utf8"))
-            KEY.append(key)
-            data.append(d)
-    for (d, k) in zip(data, KEY):
-        print(k, d)
-    return {"data": data, "KEY": KEY}
-
-
 @bottle.route("/delete/<message>")
 def delete(message):
 
@@ -98,7 +80,7 @@ def delete(message):
         os.remove(file_name)
         txn.delete(message.encode("utf8"))
     
-    bottle.redirect("/list")
+    bottle.redirect("/")
 
 
 bottle.run()
