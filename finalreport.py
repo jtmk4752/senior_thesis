@@ -3,11 +3,19 @@ import lmdb
 import json
 import datetime
 import face_recognition
-import os.path
+import os
 from convert_module import img_converter
 
 
+
 env = lmdb.Environment("./dbbook")
+
+
+#validate after putting these files to Jetson nano
+#img_folder_name = "img_data"
+#if os.path.exists(img_folder_name):
+
+
 
 
 
