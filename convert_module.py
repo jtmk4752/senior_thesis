@@ -18,14 +18,14 @@ def get_EncodingData(e_name,img):
     return result
 
 def img_converter(e_name,i_data):
-    folder_name="img_data"
-    if not os.path.exists(folder_name):
+    img_folder_name="img_data"
+    if not os.path.exists(img_folder_name):
         try:
-            os.makedirs(folder_name)
+            os.makedirs(img_folder_name)
         except Exception as e:
             print(e)
             raise
     file_name=e_name + ".json"
     image_To_json_data = get_EncodingData(e_name,i_data)
-    with open(os.path.join(folder_name, file_name),"w") as fp:
+    with open(os.path.join(img_folder_name, file_name),"w") as fp:
         json.dump(image_To_json_data,fp)
