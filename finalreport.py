@@ -4,6 +4,7 @@ import json
 import datetime
 import face_recognition
 import os
+import glob
 from convert_module import img_converter
 
 
@@ -12,8 +13,11 @@ env = lmdb.Environment("./dbbook")
 
 
 #validate after putting these files to Jetson nano
+#for starting docker images if there are json files
 #img_folder_name = "img_data"
-#if os.path.exists(img_folder_name):
+#filepath = "./" + img_folder_name + "/*json"
+#if bool(glob.glob(filepath)):
+
 
 
 
@@ -95,4 +99,4 @@ def delete(message):
     bottle.redirect("/")
 
 
-bottle.run()
+bottle.run(host='0.0.0.0',port=8080)
