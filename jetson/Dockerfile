@@ -30,4 +30,8 @@ RUN apt update -y && apt upgrade -y && \
     pip3 install face_recognition
 
 
+RUN	git config --global init.defaultBranch main && \
+	
+
+
 CMD ["/bin/bash"]
