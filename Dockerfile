@@ -8,7 +8,11 @@ ADD dlib-19.17.tar.bz2 /
 RUN apt update -y && apt upgrade -y && \
     apt install -y \
 		python-pip \
-		python3-pip && \
+		python3-pip \
+		
+		#for ping command
+		iputils-ping \
+		net-tools && \
 
     python3 -m pip install --upgrade pip && \
     python3 -m pip install lmdb bottle && \
@@ -18,6 +22,7 @@ RUN apt update -y && apt upgrade -y && \
 	unzip \
 	libcanberra-gtk* \
 
+	#for changing dlib settings
 	cmake \
 	libopenblas-dev \
 	liblapack-dev \
@@ -27,11 +32,11 @@ RUN apt update -y && apt upgrade -y && \
     python3 setup.py install && \
     cd / && \
     rm -R /dlib-19.17 && \
-    pip3 install face_recognition
 
-
-RUN	git config --global init.defaultBranch main && \
+    pip3 install face_recognition && \
+	cd / && \
+	git config --global init.defaultBranch main && \
+	git clone https://github.com/jtmk4752/senior_thesis_jetson_webserver.git 
 	
-
 
 CMD ["/bin/bash"]
