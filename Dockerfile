@@ -37,6 +37,9 @@ RUN apt update -y && apt upgrade -y && \
 	cd / && \
 	git config --global init.defaultBranch main && \
 	git clone https://github.com/jtmk4752/senior_thesis_jetson_webserver.git 
-	
+
+RUN python3 -m pip uninstall -y tensorboard tensorflow tensorflow-estimator torch torchvision torchaudio onnx numpy numba pandas scipy jupyter jupyter-client jupyter-console jupyter-core jupyterlab jupyterlab-pygments jupyterlab-server jupyterlab-widgets
+
+WORKDIR /senior_thesis_jetson_webserver
 
 CMD ["/bin/bash"]

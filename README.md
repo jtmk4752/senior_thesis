@@ -10,3 +10,8 @@ My code is based on:<br />
 &emsp;&emsp;&emsp;-Face recognition function<br />
 &emsp;&emsp;https://stackoverflow.com/questions/64196315/json-dump-into-specific-folder<br />
 &emsp;&emsp;&emsp;-"img_data" function to convert_module.py
+&emsp;Socker server:<br />
+&emsp;&emsp;https://www.raspberrypirulo.net/entry/socket-server
+&emsp;&emsp;(see cache:https://webcache.googleusercontent.com/search?q=cache:pNCDdSu6pQ0J:https://www.raspberrypirulo.net/entry/socket-server+&cd=9&hl=ja&ct=clnk&gl=jp)
+&emsp;&emsp;https://www.raspberrypirulo.net/entry/socket-client
+&emsp;&emsp;(see cache:https://webcache.googleusercontent.com/search?q=cache:evhENkPeFecJ:https://www.raspberrypirulo.net/entry/socket-client+&cd=1&hl=ja&ct=clnk&gl=jp)
