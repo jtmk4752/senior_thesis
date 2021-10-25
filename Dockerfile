@@ -39,7 +39,7 @@ RUN apt update -y && apt upgrade -y && \
 
 RUN python3 -m pip uninstall -y tensorboard tensorflow tensorflow-estimator torch torchvision torchaudio \
 								onnx numpy numba pandas scipy jupyter jupyter-client jupyter-console \
-								jupyter-core jupyterlab jupyterlab-pygments jupyterlab-server jupyterlab-widgets
+								jupyter-core jupyterlab jupyterlab-pygments jupyterlab-server jupyterlab-widgets && \
 
 #	cd / && \
 #	git config --global init.defaultBranch main && \
