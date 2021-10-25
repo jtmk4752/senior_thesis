@@ -1,10 +1,11 @@
 FROM nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
-ADD dlib-19.20.tar.bz2 /
-#dlib-19.20.tar.bz2 was commented out on dlib/cuda/cudnn_dlibapi.cpp "forward_algo = forward_best_algo;"
+ADD dlib-19.22.tar.bz2 /
+#dlib-19.22.tar.bz2 was commented out on dlib/cuda/cudnn_dlibapi.cpp "forward_algo = forward_best_algo;"
 #refer https://github.com/ageitgey/face_recognition/blob/master/README_Japanese.md
-#and I use dlib-19.20 because I don't need special command for CUDA setup.
+#and I use dlib-19.22 because I don't need special command for CUDA setup.
 #refer https://qiita.com/FXsimone/items/4864ff695d7599491ca8
+
 
 RUN apt update -y && apt upgrade -y && \
     apt install -y \
@@ -29,10 +30,10 @@ RUN apt update -y && apt upgrade -y && \
 	liblapack-dev \
 	libjpeg-dev  &&\
 
-    cd /dlib-19.20 && \
+    cd /dlib-19.22 && \
     python3 setup.py install && \
     cd / && \
-    rm -R /dlib-19.20 && \
+    rm -R /dlib-19.22 && \
 
     pip3 install face_recognition && \
 	
