@@ -15,3 +15,5 @@ My code is based on:<br />
 &emsp;&emsp;(see cache:https://webcache.googleusercontent.com/search?q=cache:pNCDdSu6pQ0J:https://www.raspberrypirulo.net/entry/socket-server+&cd=9&hl=ja&ct=clnk&gl=jp)<br />
 &emsp;&emsp;https://www.raspberrypirulo.net/entry/socket-client<br />
 &emsp;&emsp;(see cache:https://webcache.googleusercontent.com/search?q=cache:evhENkPeFecJ:https://www.raspberrypirulo.net/entry/socket-client+&cd=1&hl=ja&ct=clnk&gl=jp)<br />
+&emsp;Dummy img:<br />
+&emsp;&emsp;https://thispersondoesnotexist.com/<br />
