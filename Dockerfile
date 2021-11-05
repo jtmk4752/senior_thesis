@@ -22,7 +22,6 @@ RUN apt update -y && apt upgrade -y && \
 	wget \
 	nano \
 	unzip \
-	libcanberra-gtk* \
 
 	#for changing dlib settings
 	cmake \
@@ -40,6 +39,9 @@ RUN apt update -y && apt upgrade -y && \
     python3 setup.py install && \
     cd / && \
     rm -R /dlib-19.22 && \
+###############################
+##############################
+
 
     pip3 install face_recognition && \
 	
