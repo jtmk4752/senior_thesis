@@ -1,6 +1,7 @@
 FROM nvcr.io/nvidia/l4t-ml:r32.6.1-py3
 
-ADD dlib-19.22.tar.bz2 /
+ADD dlib-19.22.tar.bz2 setup.sh /
+
 #dlib-19.22.tar.bz2 was commented out on dlib/cuda/cudnn_dlibapi.cpp "forward_algo = forward_best_algo;"
 #refer https://github.com/ageitgey/face_recognition/blob/master/README_Japanese.md
 #and I use dlib-19.22 because I don't need special command for CUDA setup.
@@ -28,20 +29,6 @@ RUN apt update -y && apt upgrade -y && \
 	libopenblas-dev \
 	liblapack-dev \
 	libjpeg-dev  &&\
-
-##############################
-##############################
-##############################docker start後でないとcuBLAS関連のマウントがなされずdlib上でCUDAが有効にならない。
-##############################dockerfile上ではdlibのbuildは行わない
-##############################https://forums.developer.nvidia.com/t/nvidia-l4t-base-missing-cublas-v2-h/174582/5
-##############################
-    cd /dlib-19.22 && \
-    python3 setup.py install && \
-    cd / && \
-    rm -R /dlib-19.22 && \
-###############################
-##############################
-
 
     pip3 install face_recognition && \
 	
