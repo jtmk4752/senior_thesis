@@ -39,7 +39,7 @@ RUN apt update -y && apt upgrade -y && \
 	git clone https://github.com/jtmk4752/senior_thesis_jetson_webserver.git && \
 
 	#for https://qiita.com/tosikazu-s/items/7dd6cd6c3f4fc2e21743
-	export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1 >> ~/.bashrc
+	echo "export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1" >> ~/.bashrc
 
 
 WORKDIR /senior_thesis_jetson_webserver
