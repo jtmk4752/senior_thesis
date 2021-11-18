@@ -10,3 +10,4 @@ cd /dlib-19.22
 python3 setup.py install
 cd
 rm -R /dlib-19.22
+pip3 install face_recognition

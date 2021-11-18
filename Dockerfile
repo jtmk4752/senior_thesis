@@ -29,11 +29,9 @@ RUN apt update -y && apt upgrade -y && \
 	libopenblas-dev \
 	liblapack-dev \
 	libjpeg-dev  &&\
-
-    pip3 install face_recognition && \
 	
 	python3 -m pip uninstall -y tensorboard tensorflow tensorflow-estimator torch torchvision torchaudio \
-								onnx numpy numba pandas scipy jupyter jupyter-client jupyter-console \
+								onnx numba pandas scipy jupyter jupyter-client jupyter-console \
 								jupyter-core jupyterlab jupyterlab-pygments jupyterlab-server jupyterlab-widgets && \
 
 	cd / && \
