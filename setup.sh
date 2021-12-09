@@ -5,6 +5,10 @@
 #refer
 #https://forums.developer.nvidia.com/t/nvidia-l4t-base-missing-cublas-v2-h/174582/5
 
+apt update
+apt upgrade -y
+
+python3 -m pip install --upgrade pip
 
 cd /dlib-19.22
 python3 setup.py install
